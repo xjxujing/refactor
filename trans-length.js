@@ -3,7 +3,7 @@
  * 1 英尺(foot) = 12 英寸(inch)
  * 1 码(yard) = 3 英尺(foot)
  * */
-import { YARD, F, INCH } from "./consts"
+import { YARD, FOOT, INCH } from "./consts"
 
 export class Length {
   constructor(val, unit) {
@@ -24,7 +24,7 @@ export class Length {
     let len = this
 
     if (this.unit === YARD) {
-      if (u === F) {
+      if (u === FOOT) {
         len = new Length(this.value * 3, u)
       } else if (u === INCH) {
         len = new Length(this.value * 36, u)
@@ -34,12 +34,12 @@ export class Length {
     if (this.unit === INCH) {
       if (u === YARD) {
         len = new Length(this.value / 36, u)
-      } else if (u === F) {
+      } else if (u === FOOT) {
         len = new Length(this.value / 12, u)
       }
     }
 
-    if (this.unit === F) {
+    if (this.unit === FOOT) {
 
       // 英尺转码
       if (u === YARD) {

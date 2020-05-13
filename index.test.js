@@ -1,5 +1,5 @@
 import { Length } from "./trans-length"
-import { YARD, F, INCH } from "./consts"
+import { YARD, FOOT, INCH } from "./consts"
 
 describe("Length", () => {
   test("getVal", () => {
@@ -8,17 +8,17 @@ describe("Length", () => {
   })
 
   test('1 英尺应该等于 12 英寸', () => {
-    const length = new Length(1, F).parseTo(INCH)
+    const length = new Length(1, FOOT).parseTo(INCH)
     expect(length.getVal()).toBe(12)
   })
 
   test('9 英尺应该等于 3 码', () => {
-    const length = new Length(9, F).parseTo(YARD)
+    const length = new Length(9, FOOT).parseTo(YARD)
     expect(length.getVal()).toBe(3)
   })
 
   test('24 英寸应该等于 2 英尺', () => {
-    const length = new Length(24, INCH).parseTo(F)
+    const length = new Length(24, INCH).parseTo(FOOT)
     expect(length.getVal()).toBe(2)
   })
 
@@ -33,7 +33,7 @@ describe("Length", () => {
   })
 
   test('1 码应该等于 3 英尺', () => {
-    const length = new Length(1, YARD).parseTo(F)
+    const length = new Length(1, YARD).parseTo(FOOT)
     expect(length.getVal()).toBe(3)
   })
 

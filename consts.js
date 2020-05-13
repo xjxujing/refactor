@@ -1,3 +1,3 @@
 export const YARD = "yard"
-export const F = "f"
+export const FOOT = "foot"
 export const INCH = "inch"
